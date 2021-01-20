@@ -14,27 +14,18 @@ import static org.junit.jupiter.api.Assertions.*;
 
 /**
  *
- * @author Mint
+ * @author Matias
  */
 public class CustomerTest {
     
+    Customer customer ;
     public CustomerTest() {
-    }
-    
-    @BeforeAll
-    public static void setUpClass() {
-    }
-    
-    @AfterAll
-    public static void tearDownClass() {
     }
     
     @BeforeEach
     public void setUp() {
+        customer = new Customer("Matias");
     }
     
-    @AfterEach
-    public void tearDown() {
-    }
     
 }

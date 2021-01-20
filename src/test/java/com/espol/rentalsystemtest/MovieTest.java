@@ -14,38 +14,51 @@ import static org.junit.jupiter.api.Assertions.*;
 
 /**
  *
- * @author Mint
+ * @author Matias
  */
 public class MovieTest {
-    
+
     public MovieTest() {
     }
-    
-    @BeforeAll
-    public static void setUpClass() {
-    }
-    
-    @AfterAll
-    public static void tearDownClass() {
-    }
-    
+
+    Movie theManWhoKnewTooMuch, mulan, slumdogMillionaire;
+
     @BeforeEach
     public void setUp() {
-    }
-    
-    @AfterEach
-    public void tearDown() {
+        theManWhoKnewTooMuch = new Movie("The Man Who Knew Too Much", Movie.REGULAR);
+        mulan = new Movie("Mulan", Movie.CHILDRENS);
+        slumdogMillionaire = new Movie("Slumdog Millionaire", Movie.NEW_RELEASE);
+
     }
 
     /**
      * Test of getPriceCode method, of class Movie.
      */
     @Test
-    public void testGetPriceCode() {
+    public void testGetPriceCodeRegular() {
         System.out.println("getPriceCode");
-        Movie instance = null;
-        int expResult = 0;
-        int result = instance.getPriceCode();
+        int expResult = Movie.REGULAR;
+        int result = theManWhoKnewTooMuch.getPriceCode();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+    
+    @Test
+    public void testGetPriceCodeChildrens() {
+        System.out.println("getPriceCode");
+        int expResult = Movie.CHILDRENS;
+        int result = mulan.getPriceCode();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+    
+    @Test
+    public void testGetPriceCodeNewRelease() {
+        System.out.println("getPriceCode");
+        int expResult = Movie.NEW_RELEASE;
+        int result = slumdogMillionaire.getPriceCode();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
@@ -57,11 +70,12 @@ public class MovieTest {
     @Test
     public void testSetPriceCode() {
         System.out.println("setPriceCode");
-        int arg = 0;
-        Movie instance = null;
-        instance.setPriceCode(arg);
+        int arg = 5;
+        theManWhoKnewTooMuch.setPriceCode(arg);
+        mulan.setPriceCode(arg);
+        slumdogMillionaire.setPriceCode(arg);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
-    
+
 }
